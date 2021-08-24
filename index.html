@@ -25,14 +25,29 @@
           <dd><input type="number" class="box" name="weight"></dd>
           <dt>年齢(歳)：</dt>
           <dd><input type="number" class="box" name="bfp"></dd>
+          <dt>運動頻度(週〜回)</dt>
+            <dd>
+            <select name="example1">
+              <option value="サンプル1">ほぼ運動しない、通勤、デスクワーク</option>
+              <option value="サンプル2">軽い運動。週に1〜2回の運動</option>
+              <option value="サンプル3">中程度の運動。週に3〜5回の運動</option>
+              <option value="サンプル4">激しい運動。週に6回〜7回の運動</option>
+              <option value="サンプル5">非常に激しい運動。1日2回程度の運動</option>
+            </select>
+            </dd>
+          <dd>
           <input type="radio" class="btn" name="gender" value="male">男性
           <input type="radio" class="btn" name="gender" value="female">女性
+          </dd>
           <p><input type="button" class="calc-btn" onclick="calc(weight.value, bfp.value);" value="計算"></p>
+
+          </dl>
       </form>
 
       <h2>計算結果</h2>
 
-      <form class="diet_form"></form>
+      <form class="diet_form">
+        <dl>
           <dt>基礎代謝(kcal)：</dt>
           <dd><input id="lean" class="box" type="text" readonly=""></dd>
           <dt>摂取可能カロリー(kcal)：</dt>
@@ -44,7 +59,7 @@
           <dt>炭水化物(g)：</dt>
           <dd><input id="carbo" class="box" type="text" readonly=""></dd>
         </dl>
-
+        </form>
     </main>
 <footer class="footer">
   <h3>@enuworks 2021</h3>

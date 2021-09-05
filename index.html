@@ -7,6 +7,7 @@
   <title>カロリー計算サイト</title>
   <link rel="stylesheet" href="CSS/reset.css">
   <link rel="stylesheet" href="CSS/style.css">
+  <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js”></script>
 </head>
 
 <body>
@@ -17,29 +18,30 @@
 
       <h2>入力項目</h2>
 
-      <form class="diet_form">
+      <form class="diet_form" action="from.php" method="POST" id="AjaxFrom">
         <dl>
           <dt>身長(cm)：</dt>
-          <dd><input type="number" class="box" name="stature"></dd>
+          <dd><input type="number" class="box" name="stature" id="height"></dd>
           <dt>体重(kg)：</dt>
-          <dd><input type="number" class="box" name="weight"></dd>
+          <dd><input type="number" class="box" name="weight" id="weight"></dd>
           <dt>年齢(歳)：</dt>
-          <dd><input type="number" class="box" name="bfp"></dd>
+          <dd><input type="number" class="box" name="bfp" id="bfp"></dd>
           <dt>運動頻度(週〜回)</dt>
             <dd>
             <select name="example1">
-              <option value="サンプル1">ほぼ運動しない、通勤、デスクワーク</option>
-              <option value="サンプル2">軽い運動。週に1〜2回の運動</option>
-              <option value="サンプル3">中程度の運動。週に3〜5回の運動</option>
-              <option value="サンプル4">激しい運動。週に6回〜7回の運動</option>
-              <option value="サンプル5">非常に激しい運動。1日2回程度の運動</option>
+              <option value="サンプル1" name="ef0">ほぼ運動しない、通勤、デスクワーク</option>
+              <option value="サンプル2" name="ef1">軽い運動。週に1〜2回の運動</option>
+              <option value="サンプル3" name="ef3">中程度の運動。週に3〜5回の運動</option>
+              <option value="サンプル4" name="ef4">激しい運動。週に6回〜7回の運動</option>
+              <option value="サンプル5" name="ef5">非常に激しい運動。1日2回程度の運動</option>
             </select>
             </dd>
           <dd>
           <input type="radio" class="btn" name="gender" value="male">男性
           <input type="radio" class="btn" name="gender" value="female">女性
           </dd>
-          <p><input type="button" class="calc-btn" onclick="calc(weight.value, bfp.value);" value="計算"></p>
+          <p><input type="submit" id="calculation" value="計算" class="calc-btn">
+          </p>
 
           </dl>
       </form>
@@ -64,5 +66,6 @@
 <footer class="footer">
   <h3>@enuworks 2021</h3>
 </footer>
+　<script src="main.js"></script>
 </body>
 </html>

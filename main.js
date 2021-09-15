@@ -7,13 +7,18 @@ $(function () {
     //ここからajax
     $.ajax({
       type: "post",
-      url: "form.php",
-      data: {"v1": v1, "v2":v2},
-      datatype: "json"
+      url: "from.php",
+      data: { "v1": v1, "v2": v2 },
+      datatype: "json",
     })
       .then(
-        data => $('#lean').append(data),
-        error => alert('読み込み失敗')
-      )
-  })
+        //通信成功時
+        function (data) {
+          $("#lean").append(data);
+        },
+        //失敗時
+        function () {
+          alert("読み込みに失敗しました。");
+        });
+  });
 });
